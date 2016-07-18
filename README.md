@@ -78,6 +78,7 @@ Install vagrant plugins: [bindfs](https://github.com/gael-ian/vagrant-bindfs), [
     host $ vagrant plugin install vagrant-bindfs #only required for OSX
     host $ vagrant plugin install vagrant-triggers
     host $ vagrant plugin install vagrant-vbguest
+    host $ vagrant plugin install vagrant-omnibus
     
     #boot our vagrant instance!
     host $ vagrant up
