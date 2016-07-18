@@ -1,0 +1,106 @@
+# encoding: utf-8
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+# Allow host platform checks
+# http://stackoverflow.com/questions/26811089/vagrant-how-to-have-host-platform-specific-provisioning-steps
+module OS
+  def OS.windows?
+    (/cygwin|mswin|mingw|bccwin|wince|emx/ =~ RUBY_PLATFORM) != nil
+  end
+
+  def OS.mac?
+    (/darwin/ =~ RUBY_PLATFORM) != nil
+  end
+
+  def OS.unix?
+    !OS.windows?
+  end
+
+  def OS.linux?
+    OS.unix? and not OS.mac?
+  end
+end
+
+Vagrant.configure("2") do |config|
+
+  config.vm.box = 'ubuntu/trusty64'
+  config.vm.hostname = 'pitchbox'
+  config.vm.box_url = 'http://files.vagrantup.com/trusty64.box'
+  config.ssh.forward_agent = true
+
+  if OS.mac?
+    config.vm.synced_folder '../', '/pitchhub', type: "nfs"
+  else
+    config.vm.synced_folder '../', '/pitchhub'
+  end
+
+  config.vm.provider :virtualbox do |vb|
+    vb.customize ["modifyvm", :id, "--memory", "2048"]
+  end
+
+  if Vagrant.has_plugin?("vagrant-cachier")
+    # Configure cached packages to be shared between instances of the same base box.
+    # More info on http://fgrehm.viewdocs.io/vagrant-cachier/usage
+    config.cache.scope = :box
+  end
+
+  # Forward the Rails server default port to the host
+  config.vm.network :forwarded_port, guest: 3000, host: 3000
+
+  # Create a private network, which allows host-only access to the machine
+  # using a specific IP.
+  config.vm.network "private_network", ip: "172.28.128.3"
+
+  # Use Chef Solo to provision our virtual machine
+  config.vm.provision :chef_solo do |chef|
+
+    #Ensure the Chef 12.2.1 is used to provision and install the cookbooks
+    #chef.version = '12.2.1'
+    config.omnibus.chef_version = :latest
+    chef.cookbooks_path = ["cookbooks"]
+
+    # Handy install tool
+    chef.add_recipe 'apt'
+
+    # Installs a JavaScript runtime
+    chef.add_recipe 'nodejs'
+
+    # Rbenv for rubies management
+    chef.add_recipe 'ruby_build'
+    chef.add_recipe 'rbenv::user'
+    chef.add_recipe 'rbenv::vagrant'
+
+    # Installs Mongo with the default configuration
+    chef.add_recipe 'mongodb::mongodb_org_repo'
+    chef.add_recipe 'mongodb::default'
+
+    $ruby_version = "2.2.1"
+
+    # Rbenv options
+    chef.json = {
+        'rbenv'=> {
+            'user_installs'=> [{
+               'user'=> 'vagrant',
+               'rubies'=> [$ruby_version],
+               'global'=> $ruby_version,
+               'gems'=> {
+                   $ruby_version => [
+                       { 'name'=> "bundler" }
+                   ]
+               }
+           }]
+        }
+    }
+
+  end
+
+  #setup pitchhub's helpful aliases and bundler
+  aliasesPath = File.expand_path("scripts/aliases")
+  if File.exists? aliasesPath then
+    config.vm.provision "file", source: aliasesPath, destination: "~/.bash_aliases"
+  end
+
+
+
+end
