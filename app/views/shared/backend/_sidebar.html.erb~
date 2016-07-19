@@ -34,16 +34,8 @@
 		  <span class="sidebar-header-title">Settings</span>
 		</li>
 		<li>
-<!--Add by me -->
-                <li>
-		  <%= active_link_to(group_pitch_cards_path, :active => :exclusive) do %>
-			  <i class="fa fa-users sidebar-nav-icon"></i><span class="sidebar-nav-mini-hide">Groups</span>
-		  <% end %>
-		<!-- </li>
-<%= active_link_to(group_pitch_cards_path, :active => :exclusive) do %>
-<i class="fa fa-users sidebar-nav-icon"></i><span class="sidebar-nav-mini-hide">Groups</span>
-<%end%> -->
-		  <!-- <a href="#" class="page-coming-soon"><i class="fa fa-users sidebar-nav-icon"></i><span class="sidebar-nav-mini-hide">Groups</span></a> -->
+
+		  <a href="#" class="page-coming-soon"><i class="fa fa-users sidebar-nav-icon"></i><span class="sidebar-nav-mini-hide">Groups</span></a> 
 		</li>
 		<li>
 		  <a href="#" class="page-coming-soon"><i class="fa fa-info sidebar-nav-icon"></i><span class="sidebar-nav-mini-hide">About</span></a>
