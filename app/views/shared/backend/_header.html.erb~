@@ -1,0 +1,69 @@
+<header class="navbar navbar-default">
+  <!-- Left Header Navigation -->
+  <ul class="nav navbar-nav-custom">
+
+	<li class="visible-xs visible-sm">
+	  <a href="javascript:void(0)" onclick="App.sidebar('toggle-sidebar');
+			  this.blur();">
+		<i class="fa fa-bars fa-fw"></i>
+	  </a>
+	</li>
+
+	<li>
+	  <%= link_to(new_pitch_card_path) do %>
+		  <i class="fa fa-plus" style="color:red"></i>
+		<span class="sidebar-nav-mini-hide" style="color:red">  Create a new PitchCard</span>	
+	  <% end %>
+	</li>
+
+  </ul>
+  <!-- END Left Header Navigation -->
+
+  <!-- Search Form -->
+  <form action="/pitch_cards/search" method="get" class="navbar-form-custom" role="search">
+	<div class="form-group">
+	  <input type="text" id="top-searchM" name="top-searchM" class="form-control" placeholder="Search..." size="100">
+	</div>
+	<%= hidden_field_tag :authenticity_token, form_authenticity_token -%>
+  </form>
+  <!-- END Search Form -->
+
+  <!-- Right Header Navigation -->
+  <ul class="nav navbar-nav-custom pull-right">
+	<!-- User Dropdown -->
+	<li class="dropdown">
+	  <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+		<span class="hidden-xs"><%= current_user.first_name %></span>
+		<%= image_tag_with_at2x 'user.png' %>
+		<span class="caret"></span>
+	  </a>
+	  <ul class="dropdown-menu dropdown-custom dropdown-menu-right" style="z-index: 10000000;">
+		<li class="dropdown-header text-center">Account</li>
+		<li>
+		  <a href="#" class="page-coming-soon">
+			<i class="fa fa-question fa-fw pull-right"></i>
+			FAQ
+		  </a>
+		</li>
+		<li class="divider"></li>
+		<li>
+		  <a href="#" class="page-coming-soon">
+			<i class="fa fa-user fa-fw pull-right"></i>
+			Settings
+		  </a>
+		</li>
+		<li class="divider"></li>
+		<li>
+
+		  <%= link_to(destroy_user_session_path, :method => :delete) do %>
+			  <i class="fa fa-ban fa-fw pull-right"></i> Logout
+		  <% end %>
+
+		</li>
+	  </ul>
+	</li>
+	<!-- END User Dropdown -->
+  </ul>
+  <!-- END Right Header Navigation -->
+</header>
+<!-- END Header -->
