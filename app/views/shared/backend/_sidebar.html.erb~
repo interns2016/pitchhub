@@ -1,0 +1,51 @@
+<!-- Main Sidebar -->
+<div id="sidebar">
+  <!-- Wrapper for scrolling functionality -->
+  <div id="sidebar-scroll">
+	<!-- Sidebar Content -->
+	<div class="sidebar-content">
+	  <!-- Brand -->
+	  <a href="/" class="sidebar-brand text-center">
+		<span id="pitchhub-brand-text" class="sidebar-nav-mini-hide">pitchhub</span>
+	  </a>
+	  <!-- END Brand -->
+
+	  <!-- Sidebar Navigation -->
+	  <ul class="sidebar-nav">
+		<li>
+		  <%= active_link_to("/", :active => :exclusive )do %>
+			  <i class="fa fa-th-list sidebar-nav-icon"></i><span class="sidebar-nav-mini-hide">Dashboard</span>
+		  <% end %>
+		</li>
+		<li class="sidebar-header">
+		  <span class="sidebar-header-title">Pitch Cards</span>
+		</li>
+		<li>
+		  <%= active_link_to(initiated_pitch_cards_path, :active => :exclusive) do %>
+			  <i class="fa fa-star-o sidebar-nav-icon"></i><span class="sidebar-nav-mini-hide">Initiated</span>
+		  <% end %>
+		</li>
+		<li>
+		  <%= active_link_to(collabs_pitch_cards_path, :active => :exclusive) do %>
+			  <i class="fa fa-star sidebar-nav-icon"></i><span class="sidebar-nav-mini-hide">Collaborated</span>
+		  <% end %>
+		</li>
+		<li class="sidebar-header">
+		  <span class="sidebar-header-title">Settings</span>
+		</li>
+		<li>
+
+		  <a href="#" class="page-coming-soon"><i class="fa fa-users sidebar-nav-icon"></i><span class="sidebar-nav-mini-hide">Groups</span></a> 
+		</li>
+		<li>
+		  <a href="#" class="page-coming-soon"><i class="fa fa-info sidebar-nav-icon"></i><span class="sidebar-nav-mini-hide">About</span></a>
+		</li>
+	  </ul>
+	  <!-- END Sidebar Navigation -->
+
+	</div>
+	<!-- END Sidebar Content -->
+  </div>
+  <!-- END Wrapper for scrolling functionality -->
+</div>
+<!-- END Main Sidebar -->

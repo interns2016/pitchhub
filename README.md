@@ -78,6 +78,7 @@ Install vagrant plugins: [bindfs](https://github.com/gael-ian/vagrant-bindfs), [
     host $ vagrant plugin install vagrant-bindfs #only required for OSX
     host $ vagrant plugin install vagrant-triggers
     host $ vagrant plugin install vagrant-vbguest
+    host $ vagrant plugin install vagrant-omnibus 
     
     #boot our vagrant instance!
     host $ vagrant up
@@ -131,16 +132,6 @@ Finally, to completely wipe the virtual machine from the disk **destroying all i
 
 Please check the [Vagrant documentation](http://docs.vagrantup.com/v2/) for more information on Vagrant.
 
-## Setup the Secrets
-
-PitchHub's secrets are stored in `local_env.yml`, when you checkout the project this file does not exist.
-
-Let's fix this, duplicate the `local_env.yml.example` and remove the `example` suffix.
-
-Fill in the secrets, to do this you can use the following command:
-
-    $ rake secret
-
 ## Running
 
 Our pitchbox VM has a few handy commands that make things a little easier:
@@ -152,6 +143,16 @@ Our pitchbox VM has a few handy commands that make things a little easier:
 Nearly there! Navigate to the pitchhub directory (`pcd`) and install the gems with the following command:
  
     $ bundle install && rbenv rehash 
+
+## Setup the Secrets
+
+PitchHub's secrets are stored in `local_env.yml`, when you checkout the project this file does not exist.
+
+Let's fix this, duplicate the `local_env.yml.example` and remove the `example` suffix.
+
+Fill in the secrets, to do this you can use the following command:
+
+    $ rake secret
 
 Now you're ready to start tinkering! 
 
