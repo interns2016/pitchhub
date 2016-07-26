@@ -27,6 +27,7 @@ require 'capistrano/rbenv'
 
 set :rbenv_type, :user
 set :rbenv_ruby, '2.2.1'
+set :rbenv_custom_path, '/home/vagrant/.rbenv'
 
 # Loads custom tasks from `lib/capistrano/tasks' if you have any defined.
 Dir.glob('lib/capistrano/tasks/*.cap').each { |r| import r }
