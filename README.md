@@ -45,7 +45,7 @@ Pitchhub relies on a number of sweet technologies, mongodb and rvm to name a few
 
 Before we can boot our VM we need to install our dependencies (known as cookbooks in chef parlance). We can do this easily by opening up your favourite terminal and running:
 
-    host $ git clone https://github.com/mrwinton/pitchhub.git
+    host $ git clone https://github.com/interns2016/pitchhub.git
     host $ cd pitchhub/vagrant-box
     host $ sh install.sh
     

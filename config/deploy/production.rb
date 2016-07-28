@@ -21,7 +21,7 @@ set :log_level, :debug
 # server 'example.com', user: 'deploy', roles: %w{web app}, my_property: :my_value
 #server 'pitchhub.net', user: 'michael', roles: %w{web app}
 
-server 'www.pitchhub.net', user: 'emmanuel', roles: %w{web app}
+server 'pitchhub.net', user: 'emmanuel', roles: %w{web app}
 # set :ssh_options, {
 #     forward_agent: true,
 #     paranoid: true,
