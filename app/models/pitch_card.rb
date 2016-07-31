@@ -48,7 +48,7 @@ class PitchCard
   def value_proposition
 
     pitch_points.each do |point|
-      if point.name == "Idea"
+      if point.name == "Value Proposition"
         return point.value
       end
     end
