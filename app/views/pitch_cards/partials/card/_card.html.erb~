@@ -48,6 +48,7 @@
 
 	<% end %>
 
+	
 
 	<% initiator = @pitch_card.initiator %>
 	<% can_see_initiator = can? :see_initiator, @pitch_card %>

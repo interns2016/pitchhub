@@ -1,0 +1,19 @@
+<% can_manage = can? :manage, @pitch_card %>
+<% show_accept = (pending and can_manage) %>
+<% show_scope = ( can_manage) %>
+<% inside_short = (show_scope and show_accept) ? "inside-short" : "" %>
+<% is_suggestion = discourse.class.name == "Suggestion" %>
+<% discourse_type = is_suggestion ? "suggestion" : "comment" %>
+
+<% if  show_accept || show_scope %>
+	<div class="push-bit">
+
+	  <% if show_accept%>
+		  <%= render partial: 'pitch_cards/partials/discourses/actions/discourse_action_accept', locals: { is_suggestion: is_suggestion, discourse: discourse } %>
+	  <% end %>
+	  <% if show_scope %>
+		  <%= render partial: 'pitch_cards/partials/discourses/actions/discourse_action_scope', locals: { inside_short: inside_short, discourse_type: discourse_type, discourse: discourse } %>
+	  <% end %>
+
+	</div>
+<% end %>
