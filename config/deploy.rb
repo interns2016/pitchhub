@@ -12,7 +12,7 @@ set :repo_url, 'git@github.com:interns2016/pitchhub.git'
 # Default deploy_to directory is /var/www/my_app
 # set :deploy_to, '/var/www/pitchhub'
 set :deploy_to, '/home/michael/pitchhub'
-#set :deploy_to, '/home/emmanuel/pitchhub'
+
 
 # Default value for :scm is :git
 # set :scm, :git

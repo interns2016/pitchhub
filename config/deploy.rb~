@@ -40,8 +40,8 @@ set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public
 # set :keep_releases, 5
 
 set :scm, "git"
-#set :user, "michael"  # The server's user for deploys
-set :user, "emmanuel"
+set :user, "michael"  # The server's user for deploys
+set :user, "interns"
 set :log_level, :debug
 
 set :linked_files, %w{config/local_env.yml}
