@@ -10,18 +10,9 @@
 	  <label><%= name %></label>
 	  <%= f.text_area :content, id: css_point+"-textarea-input", class: "form-horizontal form-control-borderless form-pitch-point form-input", placeholder: "suggestion", maxlength: pitch_point_max_length, required: "required" %>
 
-	  <!-- <br/>
-
-	  <label>Comment</label>
-<<<<<<< HEAD
-	  <%= f.text_area :comment, id: css_point+"-textarea-input", class: "form-horizontal form-control-borderless form-comment form-input", placeholder: "comment", maxlength: comment_max_length %>
-	  <br/>
-=======
-	  <%= f.text_area :comment, id: css_point+"-textarea-input", class: "form-horizontal form-control-borderless form-comment form-input", placeholder: "comment", maxlength: comment_max_length, required: "required" %>
-	  <br/> -->
->>>>>>> 4cb3ccc50fca35be49ec3f69efe3b9cd61c85e62
 
 	  <div class="form-group form-actions">
+
 
 		<% identity_scopes = scopes(current_user, :except => ["initiator"]) %>
 		<% content_scopes = scopes(current_user, :except => ["initiator"]) %>
