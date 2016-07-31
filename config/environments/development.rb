@@ -16,7 +16,7 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
       address: "mail.hover.com",
-      port: 465,
+      port: 587,
       domain: "pitchhub.net",
       authentication: "plain",
       enable_starttls_auto: true,
