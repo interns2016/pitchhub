@@ -2,7 +2,9 @@
 lock '3.1.0'
 
 set :application, 'pitchhub'
-set :repo_url, 'git@github.com:mrwinton/pitchhub.git'
+#set :repo_url, 'git@github.com:mrwinton/pitchhub.git'
+
+set :repo_url, 'git@github.com:interns2016/pitchhub.git'
 
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
@@ -10,6 +12,7 @@ set :repo_url, 'git@github.com:mrwinton/pitchhub.git'
 # Default deploy_to directory is /var/www/my_app
 # set :deploy_to, '/var/www/pitchhub'
 set :deploy_to, '/home/michael/pitchhub'
+#set :deploy_to, '/home/emmanuel/pitchhub'
 
 # Default value for :scm is :git
 # set :scm, :git
@@ -37,8 +40,8 @@ set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public
 # set :keep_releases, 5
 
 set :scm, "git"
-set :user, "michael"  # The server's user for deploys
-set :user, "interns"
+#set :user, "michael"  # The server's user for deploys
+set :user, "emmanuel"
 set :log_level, :debug
 
 set :linked_files, %w{config/local_env.yml}
