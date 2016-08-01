@@ -33,7 +33,7 @@ module PitchPointsHelper
                         :selected_and_emptyable => true,
                         :top_level_commentable => false,
                         :suggestible => true,
-			:name => "Solution",
+			:name => "Solutions",
 			:placeholder => "How can we solve it ?",
                         :tooltip => "The solution"
                       },
@@ -56,16 +56,16 @@ module PitchPointsHelper
                         #:placeholder => " ",
                         #:tooltip => "Need a hand with this?"
                       #},
-                      { :selected => false,
-                        :optional => true,
-                        :selected_and_emptyable => false,
-                        :top_level_commentable => false,
-                        :suggestible => false,
-                        :voteable => true,
-                        :name => "Voting",
-                        :placeholder => "yes/no survey",
-                        :tooltip => "Yes/No survey"
-                      } 
+                      #{ :selected => false,
+                        #:optional => true,
+                        #:selected_and_emptyable => false,
+                        #:top_level_commentable => false,
+                        #:suggestible => false,
+                        #:voteable => true,
+                        #:name => "Voting",
+                        #:placeholder => "yes/no survey",
+                        #:tooltip => "Yes/No survey"
+                      #} 
 ]
   end
 
