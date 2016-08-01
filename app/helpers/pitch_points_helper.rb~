@@ -42,7 +42,7 @@ module PitchPointsHelper
                         :selected_and_emptyable => true,
                         :top_level_commentable => false,
                         :suggestible => true,
-                        :name => "Facilitation",
+                        :name => "Contacts",
                         :placeholder => "Who can help us ?",
                         :tooltip => "The people we need"
 			
