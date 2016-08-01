@@ -23,6 +23,7 @@
 
 	  <div class="form-group form-actions">
 
+
 		<% identity_scopes = scopes(current_user, :except => ["initiator"]) %>
 		<% content_scopes = scopes(current_user, :except => ["initiator"]) %>
 		<% identity_scope = @suggestion.identity_scope.present? ? @suggestion.identity_scope : nil %>

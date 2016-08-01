@@ -10,6 +10,16 @@
 <% is_suggestion = discourse.class.name == "Suggestion" %>
 <% discourse_type = is_suggestion ? "suggestion" : "comment" %>
 
+<% if pending %>
+  <div class="block block-bordered pitch-card-discourse-orange row">
+<% else %>
+  <% if rejected %>
+    <div class="block block-bordered pitch-card-discourse-red row">
+  <% else %>
+    <div class="block block-bordered pitch-card-discourse-green row">
+  <% end %>
+<% end %>
+
 <!-- Discourse -->
 <%= render partial: 'pitch_cards/partials/discourses/actions/discourse_actions', locals: { point: point, discourse: discourse, ic_scopes: ic_scopes, pending: pending } %>
 
