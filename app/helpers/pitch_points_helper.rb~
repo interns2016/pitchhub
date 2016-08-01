@@ -7,7 +7,7 @@ module PitchPointsHelper
                         :top_level_commentable => false,
                         :suggestible => true,
                         :name => "Value Proposition",
-                        :placeholder => " ",
+                        :placeholder => "Describe the idea ",
                         :tooltip => "Why is it important, worthwhile or useful?"
                       },
                       { :selected => true,
@@ -16,8 +16,8 @@ module PitchPointsHelper
                         :top_level_commentable => false,
                         :suggestible => true,
                         :name => "Business Opportunity",
-                        :placeholder => "challenge",
-                        :tooltip => "the challenge to tackle"
+                        :placeholder => "Which business could use that idea ?",
+                        :tooltip => "The opportunity to seize"
                       },
                       { :selected => true,
                         :optional => true,
@@ -25,8 +25,8 @@ module PitchPointsHelper
                         :top_level_commentable => false,
                         :suggestible => true,
                         :name => "Resources",
-                        :placeholder => "enable",
-                        :tooltip => "the available resources"
+                        :placeholder => "What ressources do we need ?",
+                        :tooltip => "The available resources"
                       },
                       { :selected => true,
                         :optional => true,
@@ -34,8 +34,8 @@ module PitchPointsHelper
                         :top_level_commentable => false,
                         :suggestible => true,
                         :name => "Solution",
-                        :placeholder => "solve",
-                        :tooltip => "the solution"
+                        :placeholder => "How can we solve it ?",
+                        :tooltip => "The solution"
                       },
                       { :selected => false,
                         :optional => true,
@@ -43,8 +43,8 @@ module PitchPointsHelper
                         :top_level_commentable => true,
                         :suggestible => false,
                         :name => "Facilitation",
-                        :placeholder => " ",
-                        :tooltip => "Need a hand with this?"
+                        :placeholder => " Need a hand with this ?",
+                        :tooltip => "The people we need"
                       },
                       { :selected => false,
                         :optional => true,

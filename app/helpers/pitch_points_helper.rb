@@ -37,11 +37,11 @@ module PitchPointsHelper
                         :placeholder => "How can we solve it ?",
                         :tooltip => "The solution"
                       },
-                      { :selected => false,
+                      { :selected => true,
                         :optional => true,
-                        :selected_and_emptyable => false,
-                        :top_level_commentable => true,
-                        :suggestible => false,
+                        :selected_and_emptyable => true,
+                        :top_level_commentable => false,
+                        :suggestible => true,
                         :name => "Facilitation",
                         :placeholder => " Need a hand with this ?",
                         :tooltip => "The people we need"
