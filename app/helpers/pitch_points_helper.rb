@@ -6,8 +6,8 @@ module PitchPointsHelper
                         :selected_and_emptyable => false,
                         :top_level_commentable => false,
                         :suggestible => true,
-			:name => "Idea",
-                        :placeholder => " Describe the idea ",
+                        :name => "Value Proposition",
+                        :placeholder => " ",
                         :tooltip => "Why is it important, worthwhile or useful?"
                       },
                       { :selected => true,
@@ -16,8 +16,8 @@ module PitchPointsHelper
                         :top_level_commentable => false,
                         :suggestible => true,
                         :name => "Business Opportunity",
-                        :placeholder => "Which business could use that idea ?",
-                        :tooltip => "The opportunity to seize"
+                        :placeholder => "challenge",
+                        :tooltip => "the challenge to tackle"
                       },
                       { :selected => true,
                         :optional => true,
@@ -25,37 +25,27 @@ module PitchPointsHelper
                         :top_level_commentable => false,
                         :suggestible => true,
                         :name => "Resources",
-			:placeholder => "What do we need ?",
-                        :tooltip => "The available resources"
-                      },
- 		      { :selected => true,
-                        :optional => true,
-                        :selected_and_emptyable => true,
-                        :top_level_commentable => false,
-                        :suggestible => true,
-			:name => "Solutions",
-			:placeholder => "How can we solve it ?",
-                        :tooltip => "The solution"
+                        :placeholder => "enable",
+                        :tooltip => "the available resources"
                       },
                       { :selected => true,
                         :optional => true,
                         :selected_and_emptyable => true,
                         :top_level_commentable => false,
                         :suggestible => true,
-                        :name => "Contacts",
-                        :placeholder => "Who can help us ?",
-                        :tooltip => "The people we need"
-			
+                        :name => "Solution",
+                        :placeholder => "solve",
+                        :tooltip => "the solution"
                       },
-                      #{ :selected => false,
-                        #:optional => true,
-                        #:selected_and_emptyable => false,
-                        #:top_level_commentable => true,
-                        #:suggestible => false,
-                        #:name => "Facilitation",
-                        #:placeholder => " ",
-                        #:tooltip => "Need a hand with this?"
-                      #},
+                      { :selected => false,
+                        :optional => true,
+                        :selected_and_emptyable => false,
+                        :top_level_commentable => true,
+                        :suggestible => false,
+                        :name => "Facilitation",
+                        :placeholder => " ",
+                        :tooltip => "Need a hand with this?"
+                      },
                       { :selected => false,
                         :optional => true,
                         :selected_and_emptyable => false,
@@ -65,8 +55,7 @@ module PitchPointsHelper
                         :name => "Voting",
                         :placeholder => "yes/no survey",
                         :tooltip => "Yes/No survey"
-                      } 
-]
+} ]
   end
 
   # @return [Object]
