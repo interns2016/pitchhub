@@ -3,7 +3,7 @@
 <% initiator_content_scope = discourse.initiator_content_scope.present? ? discourse.initiator_content_scope : nil %>
 <% display_content_scope = initiator_content_scope.present? ? initiator_content_scope : content_scope %>
 <% options = narrowed_scopes( all_available_ic_scopes, display_content_scope ).reverse %>
-<% default_option = options.select { |scope| scope[:is_selected] }.first %>
+<% default_option = options.select { |scope| scope[:is_selected] }.reverse.first %>
 
 <%= form_for(discourse, :url=>initiator_scope_pitch_card_comment_path(@pitch_card, discourse), html: { class: "scope-discourse-form" }, method: "post") do |f| %>
 
@@ -18,7 +18,7 @@
 				  	<span class="selected-scope"><%= default_option[:name] %></span>
 					<div class="btn-group btn-group-sm">
 					  <button type="button" class="btn discourse-action-btn dropdown-toggle discourse-scope-button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						<i class="fa fa-caret-down"></i>
+						<i class="fa fa-caret-down fa-2x"></i>
 						<span class="sr-only">Toggle Dropdown</span>
 					  </button>
 					  <ul class="dropdown-menu dropdown-menu-right">
