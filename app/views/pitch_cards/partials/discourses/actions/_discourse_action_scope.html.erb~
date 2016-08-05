@@ -15,7 +15,7 @@
 	  <div class="col-xs-12 col-xs-height no-side-padding col-middle">
 		<div class="inside inside-trim-top <%= inside_short %>">
 				<span class="pull-right"  style="margin-top: -4.5px">
-				  	<span class="selected-scope"><%= 'just me' %></span>
+				  	<span class="selected-scope"><%= default_option[:name] %></span>
 					<div class="btn-group btn-group-sm">
 					  <button type="button" class="btn discourse-action-btn dropdown-toggle discourse-scope-button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 						<i class="fa fa-caret-down fa-2x"></i>
