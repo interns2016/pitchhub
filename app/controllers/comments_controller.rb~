@@ -63,6 +63,7 @@ class CommentsController < ApplicationController
 
     respond_to do |format|
       if @comment.save
+	#The following line enable the emails, comment it if you do not want them !
         CommentMailer.new_comment(@comment).deliver_now
         current_user.collab_pitch_cards << @pitch_card
         flash.now[:notice] = 'Comment was successfully created.'

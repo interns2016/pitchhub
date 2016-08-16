@@ -46,7 +46,7 @@ class SuggestionsController < ApplicationController
 
     respond_to do |format|
       if @suggestion.save
-	#The following line enable the emails, comment it if you do not want them !
+	#The following line enable the emails, delete it if you do not want them !
         CommentMailer.new_suggestion(@suggestion).deliver_now
         current_user.collab_pitch_cards << @pitch_card
         flash.now[:notice] = 'Suggestion was successfully created.'
