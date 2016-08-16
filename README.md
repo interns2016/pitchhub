@@ -154,6 +154,8 @@ Fill in the secrets, to do this you can use the following command:
 
     $ rake secret
 
+Please take note that if you want to setup the notification email system email you will need to use the address notification@pitchhub.net with a specific password. Otherwise you will have to change the comments_controller.rb and suggestions_controller.rb files to enable the emails.
+
 Now you're ready to start tinkering! 
 
 When you're running the server (`pup`) take your favourite web browser and navigate to [localhost:3000](http://localhost:3000/) and you should see the index page!
